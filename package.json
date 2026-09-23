@@ -1,0 +1,30 @@
+{
+	"name": "website",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"engines": {
+		"node": ">=22"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"check": "astro check",
+		"lint": "biome ci",
+		"format": "biome check --write",
+		"test": "vitest run --coverage",
+		"prepare": "git config core.hooksPath .githooks"
+	},
+	"dependencies": {
+		"astro": "^7.3.4"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.9.10",
+		"@biomejs/biome": "2.5.14",
+		"@vitest/coverage-v8": "^5.0.1",
+		"typescript": "^6.0.3",
+		"vitest": "^5.0.1"
+	},
+	"packageManager": "pnpm@12.4.2"
+}

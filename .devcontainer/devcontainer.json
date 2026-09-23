@@ -1,0 +1,15 @@
+{
+	"name": "paroose.dev",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
+	"postCreateCommand": "corepack enable && pnpm install",
+	"forwardPorts": [4321],
+	"customizations": {
+		"vscode": {
+			"extensions": ["astro-build.astro-vscode", "biomejs.biome"],
+			"settings": {
+				"editor.defaultFormatter": "biomejs.biome",
+				"editor.formatOnSave": true
+			}
+		}
+	}
+}

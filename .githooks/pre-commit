@@ -1,0 +1,3 @@
+#!/bin/sh
+# Same checks as CI, minus the build. Activated by `pnpm install` (prepare script).
+pnpm lint && pnpm check && pnpm test
