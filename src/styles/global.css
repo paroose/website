@@ -1,0 +1,206 @@
+/* Tokens and styles from the Pascal Roose design system. Dark first, light follows the OS. */
+:root {
+	--surface: #0f1216;
+	--surface-raised: #161b22;
+	--line: #232a33;
+	--line-strong: #636f7e;
+	--ink: #e6ebf1;
+	--ink-muted: #96a2b0;
+	--signal: #3fb97f;
+	--signal-soft: #0f2b20;
+	--on-signal: #0f1216;
+	--link: var(--signal);
+	--focus-ring: 0 0 0 2px #0f1216, 0 0 0 4px #3fb97f;
+
+	--font-sans:
+		Geist, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-6: 24px;
+	--space-8: 32px;
+	--space-12: 48px;
+	--space-16: 64px;
+	--space-24: 96px;
+
+	--radius-sm: 4px;
+	--radius-md: 6px;
+
+	--measure: 680px;
+	--page-max: 1120px;
+
+	color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--surface: #f6f8fa;
+		--surface-raised: #ffffff;
+		--line: #dfe4ea;
+		--line-strong: #76828f;
+		--ink: #10151b;
+		--ink-muted: #57626f;
+		--signal: #167a4a;
+		--signal-soft: #e2f4ea;
+		--on-signal: #ffffff;
+		--focus-ring: 0 0 0 2px #f6f8fa, 0 0 0 4px #167a4a;
+		color-scheme: light;
+	}
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-sans);
+	font-size: 16px;
+	line-height: 26px;
+	background: var(--surface);
+	color: var(--ink);
+	-webkit-font-smoothing: antialiased;
+}
+
+.shell {
+	width: 100%;
+	max-width: var(--page-max);
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+	box-sizing: border-box;
+}
+
+header {
+	height: var(--space-16);
+	border-bottom: 1px solid var(--line);
+}
+
+header .shell,
+footer .shell {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-6);
+}
+
+header .shell {
+	height: 100%;
+}
+
+a {
+	transition:
+		color 150ms ease-out,
+		background-color 150ms ease-out;
+}
+
+a:focus-visible {
+	outline: 2px solid transparent;
+	box-shadow: var(--focus-ring);
+	border-radius: var(--radius-sm);
+}
+
+.wordmark {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: var(--ink);
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.wordmark span {
+	color: var(--signal);
+}
+
+.lang {
+	display: inline-flex;
+	border: 1px solid var(--line-strong);
+	border-radius: var(--radius-sm);
+	overflow: hidden;
+}
+
+.lang a {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	line-height: 16px;
+	padding: 4px 8px;
+	color: var(--ink-muted);
+	text-decoration: none;
+}
+
+.lang a[aria-current="true"] {
+	background: var(--ink);
+	color: var(--surface);
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-block: var(--space-16);
+}
+
+.label {
+	margin: 0 0 var(--space-6);
+	font-family: var(--font-mono);
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ink-muted);
+}
+
+.display {
+	margin: 0;
+	font-size: 40px;
+	line-height: 46px;
+	font-weight: 600;
+	letter-spacing: -0.03em;
+}
+
+.lead {
+	max-width: var(--measure);
+	margin: var(--space-6) 0 0;
+	font-size: 19px;
+	line-height: 30px;
+	color: var(--ink-muted);
+}
+
+footer {
+	padding: var(--space-8) 0;
+	border-top: 1px solid var(--line);
+}
+
+.note {
+	font-family: var(--font-mono);
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ink-muted);
+}
+
+@media (min-width: 640px) {
+	.shell {
+		padding: 0 var(--space-8);
+	}
+
+	.display {
+		font-size: 56px;
+		line-height: 60px;
+		letter-spacing: -0.035em;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	a {
+		transition: none;
+	}
+}
